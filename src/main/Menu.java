@@ -8,13 +8,13 @@ public class Menu {
 
 	public static void displayMenu() {
 
-		
 		System.out.println("Choose the options below: ");
 		System.out.println("1. Show list of existing files.");
 		System.out.println("2. Manipulate Files");
 		System.out.println("3. Logout");
 	}
 
+	@SuppressWarnings("static-access")
 	public void menuOperations() {
 		System.out.println("Welcome Admin");
 		while (true) {
@@ -23,9 +23,12 @@ public class Menu {
 
 			switch (input) {
 
-			case 1: System.out.println("List of all files desc order");
+			case 1:
+				FileOperations fo = new FileOperations();
+				fo.listFiles();
 				break;
-			case 2: System.out.println("List of all operations");
+			case 2:
+				System.out.println("List of all operations");
 				break;
 			case 3:
 				System.out.println("Logging off");

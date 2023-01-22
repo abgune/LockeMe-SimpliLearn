@@ -8,8 +8,10 @@ public class Test {
 		// TODO Auto-generated method stub
 
 		Menu m = new Menu();
-
-		m.menuOperations();
+        m.menuOperations();
+		//FileOperations f = new FileOperations();
+		//f.listFiles();
+		//m.menuOperations();
 
 	}
 
