@@ -1,11 +1,37 @@
 package main;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
 
 	static Scanner sc = new Scanner(System.in);
 
+	public static int getInput() {
+		int input;
+
+		while (true) {
+			try {
+				//System.out.println("Please enter a number");
+				input = sc.nextInt();
+				break;
+
+			} catch (InputMismatchException error) {
+
+				System.err.println("Not a valid input, please enter a number:");
+				sc.next();
+				continue;
+			}
+		}
+		return input;
+	}
+
+	public static void info() {
+		System.out.println();
+		System.out.println("***************LockedMe.com***************\n");
+	}
+	
+	
 	public static void displayMainMenu() {
 
 		System.out.println("Choose the options below: ");
@@ -13,9 +39,8 @@ public class Menu {
 		System.out.println("2. Manipulate Files");
 		System.out.println("3. Logout");
 
-		int input = sc.nextInt();
+		mainMenuSwitch(getInput());
 
-		mainMenuSwitch(input);
 	}
 
 	public static void mainMenuSwitch(int input) {
@@ -35,8 +60,7 @@ public class Menu {
 			break;
 		default:
 			System.out.println("Invalid option");
-			System.out.println("");
-
+			
 		}
 		displayMainMenu();
 	}
@@ -49,8 +73,7 @@ public class Menu {
 		System.out.println("3. Search file");
 		System.out.println("0. Return to main menu");
 
-		int input = sc.nextInt();
-		operationsSwitch(input);
+		operationsSwitch(getInput());
 
 	}
 
@@ -71,7 +94,8 @@ public class Menu {
 			displayMainMenu();
 			break;
 		default:
-			System.out.println("Invalid option");
+
+			System.err.println("Invalid option /n");
 			System.out.println("");
 
 		}

@@ -19,7 +19,7 @@ public class FileOperations {
 
 		for (File file : files) {
 			if (files.length != 0)
-				// validate if item is a "normal" file
+				// validate if item is a file
 				if (!file.isFile()) {
 					continue;
 				}
