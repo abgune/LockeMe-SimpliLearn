@@ -28,7 +28,10 @@ public class Menu {
 
 	public static void info() {
 		System.out.println();
-		System.out.println("***************LockedMe.com***************\n");
+		System.out.println("*****************LockedMe.com*******************");
+		System.out.println("**The application is designed to manage files.**");
+		System.out.println("************************************************");
+		System.out.println("***********Developed by Abilio Junior***********\n");
 	}
 	
 	
@@ -44,12 +47,10 @@ public class Menu {
 	}
 
 	public static void mainMenuSwitch(int input) {
-		// System.out.println("Welcome Admin");
-
+	
 		switch (input) {
 		case 1:
-			FileOperations fo = new FileOperations();
-			fo.listFiles();
+			FileOperations.listFiles();
 			break;
 		case 2:
 			operationsMenu();
@@ -68,6 +69,7 @@ public class Menu {
 	public static void operationsMenu() {
 
 		System.out.println("");
+		System.out.println("Choose the options below: ");
 		System.out.println("1. Add new file");
 		System.out.println("2. Delete existing file");
 		System.out.println("3. Search file");

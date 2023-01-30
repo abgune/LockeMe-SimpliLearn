@@ -11,7 +11,7 @@ public class FileOperations {
 	static String path = "src/files/";
 	static Scanner sc = new Scanner(System.in);
 
-	public void listFiles() {
+	public static void listFiles() {
 
 		File[] files = new File(path).listFiles();
 
@@ -74,9 +74,9 @@ public class FileOperations {
 		File file = new File(path + sc.next());
 		
 		if(file.exists()) 
-			System.out.println("File " + file.getName() + " found");
+			System.out.println("File named: " + file.getName() + " found");
 		else
-			System.out.println("File " + file.getName() + " not found");
+			System.out.println("File named: " + file.getName() + " not found");
 		}
 
 		
